@@ -15,3 +15,8 @@
 	color: white;
 	background-color: darkblue;
 }
+
+#btnShow {
+	display: none;
+	left: 82%;
+}

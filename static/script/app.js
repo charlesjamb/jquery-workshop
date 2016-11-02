@@ -1,6 +1,15 @@
 /* Write your code here! */
 
-let $btn = $("<button name='btn' class='styleBtn'>X</button>");
-$( ".announcement" ).append($btn);
+(function(){
+	
+	let $btnClose = $("<button id='btnClose' class='styleBtn'>X</button>");
+	let $btnShow = $("<button id='btnShow' class='styleBtn'>Show announcement</button>");
+	
+	$(".announcement").append($btnClose);
+	$(".announcement").append($btnShow);
 
-// $( "p > btn" ).addClass("styleBtn");
+	$(".styleBtn").click(function() {
+		$(".announcement p, #btnShow, #btnClose").toggle();
+	})
+
+}());
