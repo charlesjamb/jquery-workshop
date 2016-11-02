@@ -1,0 +1,52 @@
+/* Write your code here */
+
+.announcement {
+	position: relative;
+	background-color: lightblue;
+	border: 0.1em solid darkblue;
+	padding: 1em;
+}
+
+.styleBtn {
+	position: absolute;
+	left: 95%;
+	top: 5%;
+	border: none;
+	color: white;
+	background-color: darkblue;
+}
+
+#btnShow {
+	display: none;
+	left: 82%;
+}
+
+img {
+	max-width: 100%;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlayHide {
+	display: none;
+}
+
+.imageCaption {
+	color: white;
+}

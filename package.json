@@ -10,7 +10,6 @@
   "author": "charlesjamb <charles.jambon@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0",
-    "path": "^0.12.7"
+    "http-server": "^0.9.0"
   }
 }
