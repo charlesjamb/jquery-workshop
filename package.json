@@ -1,0 +1,16 @@
+{
+  "name": "jquery-workshop",
+  "version": "1.0.0",
+  "description": "jquery exercises",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:charlesjamb/jquery-workshop.git",
+    "type": "git"
+  },
+  "author": "charlesjamb <charles.jambon@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "path": "^0.12.7"
+  }
+}
