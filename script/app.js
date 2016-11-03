@@ -15,15 +15,15 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	// Exercise 2
-	$('ul').children('li').children('img').on('click', function() {
+	$('#imgGallery li img').on('click', function() {
 		let srcImgClicked = $(this).attr('src');
 		let altImgClicked = $(this).attr('alt');
 		$('.overlay').toggleClass('overlayHide');
-		$('.overlay').children('img').attr('src', srcImgClicked);
-		$('.overlay').children('p').text(altImgClicked);
+		$('.overlay img').attr('src', srcImgClicked);
+		$('.overlay p').text(altImgClicked);
 	})
 
-	$('.overlay').click(function() {('ul').children('li').children('img')
+	$('.overlay').click(function() {('#imgGallery li img')
 		$('.overlay').toggleClass('overlayHide');
 	})
 
@@ -36,13 +36,27 @@
 	}
 
 	function WidthChange(mq) {
-		console.log('function running');
 		if (mq.matches) {
-			$('.ex3 aside form').sticky({topSpacing:0});
+			$('#signupForm').sticky({topSpacing:0});
 		} 
 		else {
-			$('.ex3 aside form').unstick();
+			$('#signupForm').unstick();
 		}
 	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 4
+	$('#signupForm').on('submit', function(e) {
+		let password = $("input[name='password']").val();
+		let confirmPassword = $("input[name='password2']").val();
+		if (password.length < 10) {
+			e.preventDefault()
+			alert('!Password must be at least 10 characters!')
+		}
+		else if (password !== confirmPassword) {
+			e.preventDefault()
+			alert('!The two passwords are different!')
+		}
+	});
 
 }());

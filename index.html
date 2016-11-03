@@ -47,7 +47,7 @@
 		    <p>Eius, assumenda, culpa commodi deserunt sequi mollitia illo praesentium cumque? Ratione, dolorum molestias officia voluptate aperiam explicabo totam. Rem, assumenda, nulla at quos odit temporibus reiciendis sapiente alias maxime fuga.</p>
 		</div>
 
-		<ul class='row'>
+		<ul id='imgGallery' class='row'>
 		    <li class="col-small-6 col-medium-4 col-large-3"><img src="http://placekitten.com/g/421/421" alt="Kitty #1"></li>
 		    <li class="col-small-6 col-medium-4 col-large-3"><img src="http://placekitten.com/g/422/422" alt="Second Kitty"></li>
 		    <li class="col-small-6 col-medium-4 col-large-3"><img src="http://placekitten.com/g/423/423" alt="The Quick Cat"></li>
@@ -70,11 +70,13 @@
 
 		<section class='ex3 row'>
 		  <aside class="col-small-12 col-medium-3">
-		    <form action="/email-signup" method="POST">
-		      <h2>Mailing List</h2>
-		      <div><input type="text" placeholder="Your Email"></div>
-		      <div><button>Join mailing list</button></div>
-		    </form>
+			<form id="signupForm">
+				<h2>Sign Up Form</h2>
+			    <div><input type="text" name="user" placeholder="Username"></div>
+			    <div><input type="password" name="password" placeholder="Password"></div>
+			    <div><input type="password" name="password2" placeholder="Confirm Password"></div>
+			    <div><button type="submit">Signup!</button></div>
+			</form>
 		  </aside>
 		  <div class='col-small-12 col-medium-9'>
 		    <p>
