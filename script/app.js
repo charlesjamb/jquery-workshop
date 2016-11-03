@@ -60,6 +60,8 @@
 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	// Exercise 5 & 6 - Get JSON data and display it
+	issMap();
+
 	const intervalID = window.setInterval(issMap, 5000);
 
 	function issMap() {
