@@ -2,6 +2,8 @@
 
 (function(){
 
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 1
 	const $btnClose = $("<button id='btnClose' class='styleBtn'>X</button>");
 	const $btnShow = $("<button id='btnShow' class='styleBtn'>Show announcement</button>");
 	
@@ -11,20 +13,36 @@
 		$(this).parent().children().toggle();
 	})
 
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 2
 	$('ul').children('li').children('img').on('click', function() {
 		let srcImgClicked = $(this).attr('src');
 		let altImgClicked = $(this).attr('alt');
-		console.log(altImgClicked);
 		$('.overlay').toggleClass('overlayHide');
 		$('.overlay').children('img').attr('src', srcImgClicked);
 		$('.overlay').children('p').text(altImgClicked);
-
 	})
 
-	$('.overlay').click(function() {
+	$('.overlay').click(function() {('ul').children('li').children('img')
 		$('.overlay').toggleClass('overlayHide');
 	})
 
-	$(".ex3").children('aside').children('form').sticky({topSpacing:0});
+	/////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 3
+	if (matchMedia) {
+		var mq = window.matchMedia("(min-width: 641px)");
+		mq.addListener(WidthChange);
+		WidthChange(mq);
+	}
+
+	function WidthChange(mq) {
+		console.log('function running');
+		if (mq.matches) {
+			$('.ex3 aside form').sticky({topSpacing:0});
+		} 
+		else {
+			$('.ex3 aside form').unstick();
+		}
+	}
 
 }());
