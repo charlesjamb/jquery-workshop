@@ -25,6 +25,6 @@
 		$('.overlay').toggleClass('overlayHide');
 	})
 
-
+	$(".ex3").children('aside').children('form').sticky({topSpacing:0});
 
 }());

@@ -1,5 +1,9 @@
 /* Write your code here */
 
+* {
+	font-family: sans-serif;
+}
+
 .announcement {
 	position: relative;
 	background-color: lightblue;
@@ -49,4 +53,15 @@ ul {
 
 .imageCaption {
 	color: white;
+}
+
+.ex3 {
+	background-color: lightblue;
+	border: 0.1em solid darkblue;
+	padding: 0.5em;
+}
+
+.ex3 aside form {
+	padding: 0.1em;
+
 }
