@@ -1,5 +1,3 @@
-/* Write your code here! */
-
 (function(){
 
 	//////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,15 +58,30 @@
 		}
 	});
 
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	// Exercise 5 - get and display JSON data
-	$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=montreal')
-	.then(function(res) {
-		let issLocation = res.results[0].geometry.location;
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 5 & 6 - Get JSON data and display it
+	const intervalID = window.setInterval(issMap, 5000);
 
-		$('article h2').after(`<p class='issText'>The ISS is located at the latitude 
-			<span class='issLocation'>${issLocation.lat}</span> and the longitude 
-			<span class='issLocation'>${issLocation.lng}</span>.</p>`);
-	})
+	function issMap() {
+		$.getJSON(`https://api.wheretheiss.at/v1/satellites/25544`)
+		.then(function(res) {
+			let issLat = res.latitude;
+			let issLng = res.longitude;
+			console.log(issLat, issLng)
+
+			$('.issText').remove();
+			$('article h2').after(`<p class='issText'>The ISS is located at the latitude 
+				<span class='issLocation'>${issLat}</span> and the longitude 
+				<span class='issLocation'>${issLng}</span>.</p>`);
+
+			$('#issPosition').attr('src', 
+			`https://maps.googleapis.com/maps/api/staticmap?
+			&center=${issLat},${issLng}
+			&markers=color:red%7Clabel=I%7C${issLat},${issLng}
+			&zoom=5
+			&size=500x400
+			&key=AIzaSyCFaZWzWB0ZSBl8NEf9mmbjX6haD6ysSvw`);
+		})
+	}	
 
 }());

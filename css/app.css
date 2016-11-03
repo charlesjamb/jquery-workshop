@@ -21,12 +21,19 @@
 	font-weight: bold;
 }
 
+#ISS {
+	width: 100%;
+}
+
+#issPosition {
+	margin: 0 auto;	
+}
+
 .announcement {
 	position: relative;
 	background-color: lightblue;
 	border: 0.1em solid darkblue;
 	padding: 1em;
-	/*display: block;*/
 	width:100%;
 }
 
