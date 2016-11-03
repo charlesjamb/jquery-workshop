@@ -1,7 +1,24 @@
-/* Write your code here */
-
 * {
 	font-family: sans-serif;
+}
+
+#mainTitle {
+	background-color: lightblue;
+	color: darkblue;
+	border: 0.05em solid darkblue;
+}
+
+.issText {
+	background-color: lightblue;
+	border: 0.1em solid darkblue;
+	width: 100%;
+	padding: 1em;
+}
+
+.issLocation {
+	color: darkblue;
+	font-style: italic;
+	font-weight: bold;
 }
 
 .announcement {
@@ -9,12 +26,14 @@
 	background-color: lightblue;
 	border: 0.1em solid darkblue;
 	padding: 1em;
+	/*display: block;*/
+	width:100%;
 }
 
 .styleBtn {
 	position: absolute;
-	left: 95%;
-	top: 5%;
+	right: 1%;
+	top: 1%;
 	border: none;
 	color: white;
 	background-color: darkblue;
@@ -22,7 +41,6 @@
 
 #btnShow {
 	display: none;
-	left: 82%;
 }
 
 img {
@@ -63,5 +81,4 @@ ul {
 
 .ex3 aside form {
 	padding: 0.1em;
-
 }

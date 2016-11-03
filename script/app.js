@@ -3,7 +3,7 @@
 (function(){
 
 	//////////////////////////////////////////////////////////////////////////////////////////////
-	// Exercise 1
+	// Exercise 1 - buttons displaying or hiding content
 	const $btnClose = $("<button id='btnClose' class='styleBtn'>X</button>");
 	const $btnShow = $("<button id='btnShow' class='styleBtn'>Show announcement</button>");
 	
@@ -14,7 +14,7 @@
 	})
 
 	/////////////////////////////////////////////////////////////////////////////////////////////
-	// Exercise 2
+	// Exercise 2 - create overlay when img is clicked
 	$('#imgGallery li img').on('click', function() {
 		let srcImgClicked = $(this).attr('src');
 		let altImgClicked = $(this).attr('alt');
@@ -28,7 +28,7 @@
 	})
 
 	/////////////////////////////////////////////////////////////////////////////////////////////
-	// Exercise 3
+	// Exercise 3 - sticky and not sticky based on width
 	if (matchMedia) {
 		var mq = window.matchMedia("(min-width: 641px)");
 		mq.addListener(WidthChange);
@@ -45,10 +45,11 @@
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////
-	// Exercise 4
+	// Exercise 4 - form checking
 	$('#signupForm').on('submit', function(e) {
 		let password = $("input[name='password']").val();
 		let confirmPassword = $("input[name='password2']").val();
+
 		if (password.length < 10) {
 			e.preventDefault()
 			alert('!Password must be at least 10 characters!')
@@ -58,5 +59,16 @@
 			alert('!The two passwords are different!')
 		}
 	});
+
+	//////////////////////////////////////////////////////////////////////////////////////////////
+	// Exercise 5 - get and display JSON data
+	$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=montreal')
+	.then(function(res) {
+		let issLocation = res.results[0].geometry.location;
+
+		$('article h2').after(`<p class='issText'>The ISS is located at the latitude 
+			<span class='issLocation'>${issLocation.lat}</span> and the longitude 
+			<span class='issLocation'>${issLocation.lng}</span>.</p>`);
+	})
 
 }());
