@@ -16,12 +16,13 @@
 	$('#imgGallery li img').on('click', function() {
 		let srcImgClicked = $(this).attr('src');
 		let altImgClicked = $(this).attr('alt');
+		
 		$('.overlay').toggleClass('overlayHide');
 		$('.overlay img').attr('src', srcImgClicked);
 		$('.overlay p').text(altImgClicked);
 	})
 
-	$('.overlay').click(function() {('#imgGallery li img')
+	$('.overlay').click(function() {
 		$('.overlay').toggleClass('overlayHide');
 	})
 
